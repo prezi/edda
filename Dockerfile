@@ -1,7 +1,7 @@
 FROM netflixoss/tomcat:7.0.64
 
 #ADD ./target/scala-2.11/edda_2.11-3.0.0-SNAPSHOT.war /tomcat/webapps/edda.war
-ADD ./edda-2.3.0.war /tomcat/webapps/edda.war
+ADD ./build/libs/edda-2.4.0-SNAPSHOT.war /tomcat/webapps/edda.war
 RUN mkdir /tomcat/webapps/ROOT &&\
   cd /tomcat/webapps/ROOT &&\
   jar xf ../edda.war &&\
