@@ -86,11 +86,11 @@ object MongoDatastore {
   }
 
   def mongoDecodeString(str: String): String = {
-    str.replace("\\uFF0E", ".").replace("\\uFF04", "$")
+    str
   }
 
   def mongoEncodeString(str: String): String = {
-    str.replaceAll("[\\.]", "\\\\uFF0E").replaceAll("[\\$]", "\\\\uFF04")
+    str.replaceAll("kubernetes\\.io", "kubernetes_dot_io")
   }
 
   /** converts a Record to a Mongo DBObject */
