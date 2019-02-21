@@ -24,8 +24,8 @@ RUN mkdir /tomcat/webapps/ROOT &&\
   cd .. &&\
   rm edda.war
 
-RUN mkdir -p /tomcat/webapps/ROOT/WEB-INF/classes && touch /tmp/eddaLeader
-ADD ./edda.properties /tomcat/webapps/ROOT/WEB-INF/classes/edda.properties
+#RUN mkdir -p /tomcat/webapps/ROOT/WEB-INF/classes && touch /tmp/eddaLeader
+#ADD ./edda.properties /tomcat/webapps/ROOT/WEB-INF/classes/edda.properties
 
 EXPOSE 8080
 
