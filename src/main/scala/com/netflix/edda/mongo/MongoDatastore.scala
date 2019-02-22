@@ -90,8 +90,7 @@ object MongoDatastore {
   }
 
   def mongoEncodeString(str: String): String = {
-    str.replaceAll("\\.", "_dot_")
-    str.replaceAll("\\n", "")
+    str.replaceAll("\\.", "_dot_").replaceAll("\\n", "")
   }
 
   /** converts a Record to a Mongo DBObject */
