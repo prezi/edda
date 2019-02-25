@@ -90,7 +90,8 @@ object MongoDatastore {
   }
 
   def mongoEncodeString(str: String): String = {
-    str.replaceAll("\\.", "_dot_").replaceAll("\\n", "")
+    str.replaceAll("kubernetes\\.io", "kubernetes_dot_io")
+      .replaceAll("node\\.k8s\\.amazonaws\\.com", "node_dot_k8s_dot_amazonaws_dot_com")
   }
 
   /** converts a Record to a Mongo DBObject */
