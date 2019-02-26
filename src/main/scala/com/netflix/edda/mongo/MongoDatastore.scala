@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Netflix, Inc.
+ * Copyright 2012-2019 Netflix, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,11 +86,12 @@ object MongoDatastore {
   }
 
   def mongoDecodeString(str: String): String = {
-    str.replace("\\uFF0E", ".").replace("\\uFF04", "$")
+    str
   }
 
   def mongoEncodeString(str: String): String = {
-    str.replaceAll("[\\.]", "\\\\uFF0E").replaceAll("[\\$]", "\\\\uFF04")
+    str.replaceAll("kubernetes\\.io", "kubernetes_dot_io")
+      .replaceAll("node\\.k8s\\.amazonaws\\.com", "node_dot_k8s_dot_amazonaws_dot_com")
   }
 
   /** converts a Record to a Mongo DBObject */
